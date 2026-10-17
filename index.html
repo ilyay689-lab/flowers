@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Цветочная студия «Дари» | Валдай</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--card:#fff;--gold:#D4B08C;--soft:#E8D8C8;--text:#362E2B;--muted:#7A6E6A;--dark:#4A3E3D;--on-dark:#fff;--nav:rgba(250,247,242,.9);--shadow:0 10px 30px rgba(74,62,61,.07);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1F1A18;--card:#2A2321;--soft:#463B37;--text:#F0E8E2;--muted:#B5A8A1;--dark:#E8D8C8;--on-dark:#2A2321;--nav:rgba(31,26,24,.9);--shadow:0 10px 30px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#1F1A18;--card:#2A2321;--soft:#463B37;--text:#F0E8E2;--muted:#B5A8A1;--dark:#E8D8C8;--on-dark:#2A2321;--nav:rgba(31,26,24,.9);--shadow:0 10px 30px rgba(0,0,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+.top-bar{background:var(--dark);color:var(--on-dark);text-align:center;padding:8px 15px;font-size:.85rem}
+.top-bar a{color:var(--gold);text-decoration:none;font-weight:600}
+nav{background:var(--nav);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-bottom:1px solid rgba(212,176,140,.25)}
+.logo{font-size:2rem;color:var(--dark);text-decoration:none;letter-spacing:2px}
+.nav-links{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.95rem;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.hero{padding:90px 20px 70px;text-align:center;background:radial-gradient(circle,rgba(232,216,200,.35) 0%,transparent 70%)}
+.hero small{letter-spacing:2px;text-transform:uppercase;font-size:.8rem;color:var(--gold);font-weight:600}
+.hero h1{font-size:clamp(2.4rem,7vw,3.8rem);color:var(--dark);margin:10px 0 15px}
+.hero p{color:var(--muted);max-width:600px;margin:0 auto 30px;font-weight:300;font-size:1.1rem}
+.btn{background:var(--dark);color:var(--on-dark);border:none;padding:14px 32px;border-radius:30px;font-size:.95rem;font-weight:500;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--gold);color:#362E2B;transform:translateY(-2px)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.section-title{text-align:center;margin:70px 0 40px}
+.section-title h2{font-size:clamp(2rem,5vw,2.8rem);color:var(--dark)}
+.section-title p{color:var(--muted)}
+.tabs{display:flex;justify-content:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+.tab-btn{background:transparent;border:1px solid var(--soft);padding:8px 22px;border-radius:20px;cursor:pointer;color:var(--text);transition:.3s}
+.tab-btn.active,.tab-btn:hover{background:var(--soft);border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
+.pcard{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.3s}
+.pcard:hover{transform:translateY(-5px)}
+.pimg{height:240px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,var(--soft),var(--bg))}
+.pinfo{padding:20px;display:flex;flex-direction:column;flex-grow:1}
+.ptitle{font-size:1.4rem;color:var(--dark);margin-bottom:6px}
+.pdesc{font-size:.85rem;color:var(--muted);margin-bottom:15px;flex-grow:1}
+.pbottom{display:flex;justify-content:space-between;align-items:center}
+.pprice{font-size:1.2rem;font-weight:600;color:var(--dark)}
+.box{background:var(--card);border-radius:20px;padding:36px;box-shadow:var(--shadow);border:1px solid var(--soft)}
+.flowers{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin:26px 0}
+.fitem{background:var(--bg);padding:14px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.fitem small{color:var(--muted)}
+.cbtn{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);background:var(--card);color:var(--text);cursor:pointer;font-weight:bold}
+.total{background:var(--bg);padding:18px;border-radius:10px;display:flex;justify-content:space-between;font-size:1.15rem;font-weight:600;margin-top:16px}
+.info3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.info3 h3{font-size:1.5rem;color:var(--dark);margin-bottom:8px}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:80px}
+.review{background:var(--card);padding:24px;border-radius:20px;box-shadow:var(--shadow);border-left:4px solid var(--gold)}
+.review b{color:var(--dark)}.review small{display:block;color:var(--muted);margin-bottom:10px}
+.cart-float{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));right:24px;background:var(--dark);color:var(--on-dark);padding:14px 24px;border-radius:50px;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.3);z-index:1000;font-weight:500;border:none}
+.badge{background:var(--gold);color:#362E2B;padding:2px 8px;border-radius:10px;font-weight:600;margin-left:6px}
+.modal{display:none;position:fixed;inset:0;background:rgba(40,32,30,.65);backdrop-filter:blur(5px);z-index:1001;justify-content:center;align-items:center}
+.mcontent{background:var(--card);padding:30px;border-radius:20px;max-width:550px;width:92%;max-height:90vh;overflow-y:auto}
+.mhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.close{font-size:1.8rem;cursor:pointer;border:none;background:none;color:var(--muted)}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:.85rem;font-weight:600;margin-bottom:5px}
+.fg input,.fg textarea,.fg select,#builder-pack{width:100%;padding:11px 14px;border:1px solid var(--soft);border-radius:10px;font-size:.9rem;background:var(--bg);color:var(--text)}
+.check{display:flex;align-items:center;gap:10px;margin:14px 0;font-size:.9rem}
+.check input{width:18px;height:18px}
+.row{display:flex;justify-content:space-between}
+footer{background:var(--dark);color:var(--on-dark);padding:50px 20px 24px;text-align:center;font-size:.9rem}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="top-bar">📍 г. Валдай, ул. Песчаная 6г | 📞 <a href="tel:+79217378880">+7 (921) 737-88-80</a> | Бесплатная доставка при заказе от 4 000 ₽</div>
+
+<nav>
+  <a href="#" class="logo serif">ДАРИ</a>
+  <ul class="nav-links">
+    <li><a href="#catalog">Каталог</a></li>
+    <li><a href="#builder">Собрать букет</a></li>
+    <li><a href="#delivery">Доставка</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <small>Авторская флористика</small>
+  <h1 class="serif">Цветы, передающие чувства</h1>
+  <p>Создаём эстетичные авторские букеты с душой. Свежие поставки каждый день и деликатная доставка по Валдаю.</p>
+  <a href="#catalog" class="btn">Выбрать букет</a>
+</section>
+
+<div class="container">
+  <section id="catalog">
+    <div class="section-title"><h2 class="serif">Коллекции букетов</h2><p>Каждая композиция неповторима и собирается из свежайших бутонов</p></div>
+    <div class="tabs">
+      <button class="tab-btn active" data-f="all">Все букеты</button>
+      <button class="tab-btn" data-f="mono">Монобукеты</button>
+      <button class="tab-btn" data-f="author">Авторские</button>
+      <button class="tab-btn" data-f="boxes">В шляпных коробках</button>
+    </div>
+    <div class="grid" id="products"></div>
+  </section>
+
+  <section id="builder" style="margin-top:90px">
+    <div class="section-title"><h2 class="serif">Собери свой уникальный букет</h2><p>Выбирайте любимые цветы, а наши флористы оформят их в эстетичную композицию</p></div>
+    <div class="box">
+      <h3 class="serif" style="font-size:1.8rem;color:var(--dark)">Шаг 1: выберите цветы</h3>
+      <div class="flowers" id="flowers"></div>
+      <label style="font-weight:600;font-size:.9rem">Декор и упаковка:</label>
+      <select id="builder-pack" style="margin-top:8px">
+        <option value="300">Крафтовая / матовая дизайнерская бумага (+300 ₽)</option>
+        <option value="500">Премиум-ленты и фирменная коробка (+500 ₽)</option>
+        <option value="0">Минимализм (под перевязочную ленту) (0 ₽)</option>
+      </select>
+      <div class="total"><span>Итоговая стоимость букета:</span><span><span id="builder-price">300</span> ₽</span></div>
+      <button class="btn" style="width:100%;margin-top:18px" id="add-custom">Добавить этот букет в корзину</button>
+    </div>
+  </section>
+
+  <section id="delivery">
+    <div class="section-title"><h2 class="serif">Условия доставки и сервиса</h2><p>Заботимся о том, чтобы подарок прибыл вовремя и в безупречном виде</p></div>
+    <div class="box info3" style="margin-bottom:80px">
+      <div><h3 class="serif">🚚 По городу Валдай</h3><p>• От <strong>4 000 ₽</strong> — доставка <strong>бесплатно</strong>.<br>• До 4 000 ₽ — <strong>300 ₽</strong>.</p></div>
+      <div><h3 class="serif">🏡 Валдайский район</h3><p>• <strong>35 ₽ за 1 км</strong> от границы города.<br>• Время согласовывается с флористом.</p></div>
+      <div><h3 class="serif">🤫 Анонимная доставка</h3><p>Вручим букет без раскрытия имени отправителя — приятный и загадочный сюрприз.</p></div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-title"><h2 class="serif">Отзывы наших клиентов</h2><p>Впечатления из нашей группы ВКонтакте <a href="https://vk.ru/dari.valday" target="_blank" rel="noopener" style="color:var(--gold)">vk.ru/dari.valday</a></p></div>
+    <div class="reviews">
+      <div class="review"><b>Екатерина М.</b><small>Валдай</small><p>«Огромное спасибо за невероятный свадебный букет! Цветы стояли больше недели. Девочки угадали все пожелания по палитре!»</p></div>
+      <div class="review"><b>Алексей С.</b><small>Валдай</small><p>«Заказывал анонимную доставку для девушки на день рождения. Привезли чётко в срок, букет шикарный, цветы свежайшие!»</p></div>
+      <div class="review"><b>Ольга И.</b><small>Валдай</small><p>«Самый эстетичный цветочный салон в городе. Удобный сервис, авторские композиции просто волшебные. Рекомендую!»</p></div>
+    </div>
+  </section>
+</div>
+
+<button class="cart-float" id="open-cart">🛒 Корзина <span class="badge" id="cart-count">0</span></button>
+
+<div class="modal" id="cartModal">
+  <div class="mcontent">
+    <div class="mhead"><h3 class="serif" style="font-size:1.8rem;color:var(--dark)">Ваш заказ</h3><button class="close" id="close-cart">&times;</button></div>
+    <div id="cart-list"></div>
+    <div style="margin:18px 0;border-top:1px solid var(--soft);padding-top:14px">
+      <div class="row" style="font-weight:600"><span>Сумма товаров:</span><span id="subtotal">0 ₽</span></div>
+      <div class="row" style="font-size:.9rem;color:var(--muted);margin-top:5px"><span>Доставка:</span><span id="delivery-cost">0 ₽</span></div>
+      <div class="row" style="font-size:1.2rem;font-weight:700;color:var(--dark);margin-top:10px"><span>Итого:</span><span id="final-total">0 ₽</span></div>
+    </div>
+    <form id="orderForm">
+      <h4 class="serif" style="font-size:1.3rem;margin-bottom:10px">Детали доставки</h4>
+      <div class="fg"><label>Ваше имя</label><input id="cust-name" required placeholder="Анна"></div>
+      <div class="fg"><label>Ваш телефон</label><input id="cust-phone" type="tel" required placeholder="+7 (921) 000-00-00"></div>
+      <div class="check"><input type="checkbox" id="is-anon"><label for="is-anon"><strong>Анонимная доставка</strong> (получатель не узнает имя заказчика)</label></div>
+      <div class="fg"><label>Имя получателя</label><input id="rec-name" required placeholder="Елена"></div>
+      <div class="fg"><label>Телефон получателя</label><input id="rec-phone" type="tel" required placeholder="+7 (999) 000-00-00"></div>
+      <div class="fg"><label>Адрес доставки</label><textarea id="address" rows="2" placeholder="Улица, дом, квартира"></textarea></div>
+      <div class="fg"><label>Тип доставки</label>
+        <select id="delivery-type">
+          <option value="city">По г. Валдай (300 ₽ / бесплатно от 4000 ₽)</option>
+          <option value="region">За город (35 ₽/км — уточняет оператор)</option>
+          <option value="pickup">Самовывоз (ул. Песчаная 6г) (0 ₽)</option>
+        </select></div>
+      <div class="fg"><label>Текст для бесплатной открытки (необязательно)</label><textarea id="postcard" rows="2" placeholder="Напишите пару тёплых слов..."></textarea></div>
+      <div class="fg"><label>Способ оплаты</label>
+        <select id="pay-method">
+          <option value="online">Онлайн-оплата (СБП / банковская карта)</option>
+          <option value="transfer">Перевод / оплата при получении</option>
+        </select></div>
+      <button type="submit" class="btn" style="width:100%;margin-top:10px">Перейти к оплате / передать заказ</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="payModal" style="z-index:1002">
+  <div class="mcontent" style="max-width:400px;text-align:center">
+    <h3 class="serif" style="font-size:1.8rem;color:var(--dark)">Онлайн-оплата (тест)</h3>
+    <p style="font-size:.85rem;color:var(--muted);margin:10px 0 18px">Имитация работы эквайринга СБП / ЮKassa</p>
+    <div style="background:var(--bg);padding:14px;border-radius:10px;margin-bottom:18px">Сумма к оплате: <strong id="pay-amount" style="font-size:1.3rem"></strong></div>
+    <button class="btn" style="width:100%;background:#2e7d32;color:#fff" id="confirm-pay">Подтвердить успешную оплату</button>
+    <button class="close" style="display:block;margin:14px auto 0;font-size:.9rem" id="cancel-pay">Отмена</button>
+  </div>
+</div>
+
+<footer id="contacts">
+  <p class="serif" style="font-size:1.8rem;letter-spacing:2px">ДАРИ</p>
+  <p>Цветочная студия в г. Валдай, ул. Песчаная 6г</p>
+  <p>Телефон: +7 (921) 737-88-80 | ВКонтакте: <a href="https://vk.ru/dari.valday" target="_blank" rel="noopener">vk.ru/dari.valday</a></p>
+  <p style="margin-top:22px;opacity:.6;font-size:.8rem">© 2026 Студия флористики «Дари». Все права защищены.</p>
+</footer>
+
+<script>
+const products=[
+ {t:'Нежность Небес',c:'author',p:3800,e:'🌸',d:'Авторский букет в пудрово-молочных тонах из пионовидных роз и эвкалипта.'},
+ {t:'Монобукет из 15 французских роз',c:'mono',p:4500,e:'🌹',d:'Изысканная классика в молочной матовой упаковке с шёлковой лентой.'},
+ {t:'Шляпная коробка «Cream Velvet»',c:'boxes',p:5200,e:'🎀',d:'Элегантная композиция в бархатной коробке со стойкой флористической губкой.'},
+ {t:'Утренний Валдай',c:'author',p:3200,e:'💐',d:'Лёгкий букет с гортензией, кустовыми розами и хлопком.'}
+];
+const flowers=[
+ {id:'rose',n:'Пионовидная роза',p:280},{id:'peony',n:'Нежный пион',p:450},
+ {id:'hydrangea',n:'Гортензия голубая/белая',p:750},{id:'eucalyptus',n:'Эвкалипт (веточка)',p:150},
+ {id:'bushRose',n:'Кустовая роза',p:220}
+];
+const counts={};flowers.forEach(f=>counts[f.id]=0);
+let cart=[];
+const $=id=>document.getElementById(id);
+
+function renderCatalog(f='all'){
+  $('products').innerHTML=products.filter(x=>f==='all'||x.c===f).map(x=>`
+   <div class="pcard"><div class="pimg">${x.e}</div><div class="pinfo">
+   <div class="ptitle serif">${x.t}</div><div class="pdesc">${x.d}</div>
+   <div class="pbottom"><div class="pprice">${x.p} ₽</div>
+   <button class="btn" style="padding:8px 18px;font-size:.85rem" data-add="${x.t}" data-price="${x.p}">+ В корзину</button></div></div></div>`).join('');
+}
+document.querySelectorAll('.tab-btn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');renderCatalog(b.dataset.f);
+});
+$('products').onclick=e=>{const b=e.target.closest('[data-add]');if(b)addToCart(b.dataset.add,+b.dataset.price)};
+
+function renderBuilder(){
+  $('flowers').innerHTML=flowers.map(f=>`
+   <div class="fitem"><div><div style="font-weight:600;font-size:.9rem">${f.n}</div><small>${f.p} ₽ / шт</small></div>
+   <div style="display:flex;align-items:center;gap:10px">
+   <button class="cbtn" data-id="${f.id}" data-d="-1">−</button><span id="c-${f.id}" style="font-weight:600">0</span>
+   <button class="cbtn" data-id="${f.id}" data-d="1">+</button></div></div>`).join('');
+}
+$('flowers').onclick=e=>{const b=e.target.closest('.cbtn');if(!b)return;
+  counts[b.dataset.id]=Math.max(0,counts[b.dataset.id]+ +b.dataset.d);
+  $('c-'+b.dataset.id).textContent=counts[b.dataset.id];builderTotal();};
+function builderTotal(){
+  const t=flowers.reduce((s,f)=>s+counts[f.id]*f.p,0)+ +$('builder-pack').value;
+  $('builder-price').textContent=t;return t;
+}
+$('builder-pack').onchange=builderTotal;
+$('add-custom').onclick=()=>{
+  const comp=flowers.filter(f=>counts[f.id]>0).map(f=>`${f.n} (${counts[f.id]} шт)`).join(', ');
+  if(!comp){alert('Пожалуйста, выберите хотя бы один цветок для букета!');return}
+  addToCart(`Авторский сборный букет [${comp}]`,builderTotal());
+  alert('Индивидуальный букет добавлен в корзину!');
+};
+
+function addToCart(title,price){
+  const ex=cart.find(i=>i.title===title);
+  if(ex)ex.count++;else cart.push({title,price,count:1});
+  updateCart();
+}
+function updateCart(){
+  $('cart-count').textContent=cart.reduce((s,i)=>s+i.count,0);
+  const sub=cart.reduce((s,i)=>s+i.price*i.count,0);
+  const type=$('delivery-type').value;
+  let dc=0;
+  if(type==='city')dc=(sub>=4000||sub===0)?0:300;
+  $('subtotal').textContent=sub+' ₽';
+  $('delivery-cost').textContent=type==='region'?'по расчёту (35 ₽/км)':(dc===0?'Бесплатно':dc+' ₽');
+  $('final-total').textContent=(sub+dc)+' ₽'+(type==='region'?' + доставка':'');
+  $('cart-list').innerHTML=cart.length?cart.map(i=>`
+   <div class="row" style="margin-bottom:10px;font-size:.9rem"><div><strong>${i.title}</strong><br>${i.price} ₽ × ${i.count}</div>
+   <div><strong>${i.price*i.count} ₽</strong></div></div>`).join('')
+   :'<p style="text-align:center;color:var(--muted)">Корзина пока пуста</p>';
+}
+$('delivery-type').onchange=()=>{
+  $('address').required=$('delivery-type').value!=='pickup';updateCart();
+};
+$('open-cart').onclick=()=>{$('cartModal').style.display='flex'};
+$('close-cart').onclick=()=>{$('cartModal').style.display='none'};
+$('is-anon').onchange=e=>{if(e.target.checked)alert('Анонимная доставка включена! Курьер не сообщит получателю имя заказчика.')};
+
+$('orderForm').onsubmit=async e=>{
+  e.preventDefault();
+  if(!cart.length){alert('Корзина пуста!');return}
+  if($('pay-method').value==='online'){
+    $('pay-amount').textContent=$('final-total').textContent;
+    $('payModal').style.display='flex';
+  }else await sendOrder('Оплата при получении / перевод');
+};
+$('cancel-pay').onclick=()=>{$('payModal').style.display='none'};
+$('confirm-pay').onclick=async()=>{$('payModal').style.display='none';await sendOrder('ОПЛАЧЕНО ОНЛАЙН (СБП/карта)')};
+
+async function sendOrder(status){
+  const name=$('cust-name').value;
+  let msg=`💐 НОВЫЙ ЗАКАЗ [Дари Валдай]\n\n💳 Оплата: ${status}\n👤 Заказчик: ${name} (${$('cust-phone').value})\n`
+   +`🤫 Анонимно: ${$('is-anon').checked?'ДА':'нет'}\n🎁 Получатель: ${$('rec-name').value} (${$('rec-phone').value})\n`
+   +`📍 Адрес: ${$('address').value||'—'}\n🚚 Доставка: ${$('delivery-type').selectedOptions[0].text}\n💌 Открытка: ${$('postcard').value||'без открытки'}\n\n📦 Состав:\n`;
+  cart.forEach(i=>msg+=`• ${i.title} — ${i.count} шт. (${i.price*i.count} ₽)\n`);
+  msg+=`\n💰 Итого: ${$('final-total').textContent}`;
+  // Для отправки в Telegram укажите данные бота (на этой странице внешние запросы заблокированы — работает на вашем хостинге)
+  const BOT_TOKEN='YOUR_TELEGRAM_BOT_TOKEN',CHAT_ID='YOUR_TELEGRAM_CHAT_ID';
+  if(BOT_TOKEN==='YOUR_TELEGRAM_BOT_TOKEN'){
+    alert(`Спасибо, ${name}! Ваш заказ принят.\n(Для автоматической отправки в Telegram укажите BOT_TOKEN в коде.)`);
+  }else{
+    try{
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CHAT_ID,text:msg})});
+      alert('Спасибо за заказ! Заявка отправлена флористу в студию «Дари».');
+    }catch(err){alert('Ошибка отправки. Позвоните нам: +7 (921) 737-88-80');return}
+  }
+  cart=[];updateCart();$('cartModal').style.display='none';$('orderForm').reset();
+}
+
+renderCatalog();renderBuilder();updateCart();
+</script>
+</body>
+</html>
